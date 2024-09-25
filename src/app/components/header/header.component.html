@@ -1,0 +1,12 @@
+<header class="border-b border-gray-200 dark:border-gray-800 px-[72px] py-[16px]">
+  <div class="flex justify-between items-center">
+    <!-- Logo padrão (tema claro) -->
+    <img [src]="isDarkTheme ? '../../../assets/dark_logo.svg' : '../../../assets/logo.svg'" style="height: 30px;" alt="Logo">
+    
+    <!-- Botão de alternância de tema -->
+    <button (click)="toggleTheme()" class="border py-1 px-2 rounded-lg border-gray-300 dark:border-gray-600 ml-4 bg-white dark:bg-gray-800">
+      <fa-icon [ngClass]="{'hidden': isDarkTheme, 'block': !isDarkTheme}" [icon]="['fas', 'moon']"></fa-icon>
+      <fa-icon [ngClass]="{'hidden': !isDarkTheme, 'block': isDarkTheme}" class="text-gray-500" [icon]="['fas', 'sun']"></fa-icon>
+    </button>
+  </div>
+</header>

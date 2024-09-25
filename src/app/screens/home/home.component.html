@@ -1,0 +1,31 @@
+<div class="h-full flex justify-center items-center">
+  <div class="bg-white dark:bg-gray-800 drop-shadow-lg p-3 rounded-md">
+    <div 
+      class="text-black dark:text-white rounded-md flex flex-col justify-center items-center border-dashed border-2 border-gray-200 dark:border-gray-600 cursor-pointer"
+      style="width: 600px; height: 326px;"
+      (click)="fileInput.click()"
+      (dragover)="onDragOver($event)" 
+      (dragleave)="onDragLeave()" 
+      (drop)="onDrop($event)"
+      tabindex="0" role="button" aria-label="Upload file area"
+    >
+      <div class="py-4">
+        <img src="../../../assets/exit.svg" alt="Upload icon" style="height: 35px;">
+      </div>
+      <div class="font-semibold">
+        <span>Drag & drop a file or </span>
+        <span class="font-medium text-blue-600 cursor-pointer">browse files</span>
+      </div>
+      <span class="font-light text-sm">JPG, PNG or GIF - Max file size 2MB</span>
+    </div>
+
+    <!-- Input de arquivo escondido -->
+    <input 
+      type="file" 
+      #fileInput 
+      (change)="onFileSelected($event)" 
+      accept=".jpg,.png,.gif" 
+      style="display: none;" 
+    />
+  </div>
+</div>
